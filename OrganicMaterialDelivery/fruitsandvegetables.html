@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruits and Vegetables</title>
+<style>
+body {
+font-family: garamond;
+font-weight: 600;
+background-color: #f9f9f9;
+margin: 0;
+padding: 20px;
+}
+.menu-item {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.menu-item img {
+width: 80px;
+height: 80px;
+border-radius: 8px;
+margin-right: 15px;
+}
+.menu-details {
+flex-grow: 1;
+}
+.menu-details h3 {
+margin: 0 0 5px;
+}
+.menu-details .price {
+color: #2e8b57;
+font-weight: bold;
+}
+.quantity-selector {
+display: flex;
+align-items: center;
+}
+.quantity-selector button {
+background-color: #ddd;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+font-size: 16px;
+}
+.quantity-selector button:hover {
+background-color: #bbb;
+}
+.quantity-input {
+width: 30px;
+text-align: center;
+margin: 0 5px;
+font-size: 16px;
+border: none;
+}
+.add-button {
+background-color:#2e8b57;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+margin-left: 10px;
+}
+.add-button:hover {
+background-color: #218838;
+}
+h1{
+color: #2e8b57;
+}
+</style>
+</head>
+<body>
+<h1>Fruits and Vegetables - Category Page</h1>
+<div class="menu-item">
+<img src="apple.jpg" alt="Apple">
+<div class="menu-details">
+<h3Apple</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(33, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-33" value="1" min="1" readonly>
+<button onclick="changeQuantity(33, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(33, 'Apple', 170.00, 'apple.jpg', 'Fruits and Vegetables')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="banana.jpg" alt="Banana">
+<div class="menu-details">
+<h3>Banana</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(34, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-34" value="1" min="1" readonly>
+<button onclick="changeQuantity(34, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(34, 'Banana', 170.00, 'banana.jpg', 'Fruits and Vegetables')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="guava.jpg" alt="Guava">
+<div class="menu-details">
+<h3>Guava</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(35, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-35" value="1" min="1" readonly>
+<button onclick="changeQuantity(35, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(35, 'Guava', 170.00, 'guava.jpg', 'Fruits and Vegetables')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="tomato.jpg" alt="Tomato">
+<div class="menu-details">
+<h3>Tomato</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(36, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-36" value="1" min="1" readonly>
+<button onclick="changeQuantity(36, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(36, 'Tomato', 170.00, 'tomato.jpg', 'Fruits and Vegetables')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="onion.jpg" alt="Onion">
+<div class="menu-details">
+<h3>Onion</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(37, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-37" value="1" min="1" readonly>
+<button onclick="changeQuantity(37, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(37, 'Onion', 170.00, 'onion.jpg', 'Fruits and Vegetables')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="potato.jpg" alt="Potato">
+<div class="menu-details">
+<h3>Potato</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(38, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-38" value="1" min="1" readonly>
+<button onclick="changeQuantity(38, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(38, 'Potato', 170.00, 'potato.jpg', 'Fruits and Vegetables')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="babycorn.jpg" alt="Baby Corn">
+<div class="menu-details">
+<h3>Baby Corn</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(39, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-39" value="1" min="1" readonly>
+<button onclick="changeQuantity(39, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(39, 'Baby Corn', 170.00, 'babycorn.jpg', 'Fruits and Vegetables')">ADD</button>
+</div>
+<script>
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+function changeQuantity(id, delta) {
+const quantityInput = document.getElementById(`quantity-${id}`);
+let quantity = parseInt(quantityInput.value) + delta;
+if (quantity < 1) quantity = 1;
+quantityInput.value = quantity;
+}
+function addToCart(id, name, price, image, category) {
+const quantity = parseInt(document.getElementById(`quantity-${id}`).value);
+const existingCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+const itemIndex = existingCart.findIndex(item => item.id === id && item.category === category);
+if (itemIndex > -1) {
+existingCart[itemIndex].quantity += quantity;
+} else {
+existingCart.push({ id, name, price, quantity, image, category });
+}
+localStorage.setItem('cartItems', JSON.stringify(existingCart));
+alert(`${name} added to cart with quantity: ${quantity}`);
+}
+</script>
+</body>
+</html>

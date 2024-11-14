@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up page</title>
+<style>
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+margin: 0;
+font-family: Arial, sans-serif;
+background-image: url('bg.jpg');
+}
+.login-container, .modal-content {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 400px;
+text-align: center;
+}
+.input-group {
+margin-bottom: 15px;
+text-align: left;
+}
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+input[type="email"], input[type="password"] {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+button {
+width: 100%;
+padding: 10px;
+background-color: #2e8b57;
+color: white;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 10px;
+}
+button:hover {
+background-color: #255d40;
+}
+#signup-error-message {
+color: red;
+margin-top: 10px;
+font-size: 14px;
+}
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+justify-content: center;
+align-items: center;
+}
+.modal-content {
+position: relative;
+padding: 30px;
+}
+.close {
+position: absolute;
+right: 20px;
+top: 15px;
+font-size: 24px;
+cursor: pointer;
+}
+a {
+color: #2e8b57;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div id="signupModal" class="modal" style="display: flex;">
+<div class="modal-content">
+<span class="close" onclick="closeSignUpModal()">&times;</span>
+<h2>Sign Up</h2>
+<div class="input-group">
+<label for="signupEmail">Email</label>
+<input type="email" id="signupEmail" required>
+</div>
+<div class="input-group">
+<label for="signupPassword">Password</label>
+<input type="password" id="signupPassword" required>
+</div>
+<button onclick="signUp()">Sign Up</button>
+<p id="signup-error-message"></p>
+</div>
+</div>
+<script>
+function closeSignUpModal() {
+document.getElementById("signupModal").style.display = "none";
+}
+function signUp() {
+const signupEmail = document.getElementById("signupEmail").value;
+const signupPassword = document.getElementById("signupPassword").value;
+const signupErrorMessage = document.getElementById("signup-error-message");
+if (!signupEmail || !signupPassword) {
+signupErrorMessage.textContent = "Please fill in all fields.";
+return;
+}
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailPattern.test(signupEmail)) {
+signupErrorMessage.textContent = "Please enter a valid email address.";
+return;
+}
+signupErrorMessage.textContent = "";
+alert("Sign-up successful! Click OK to go to the home page!");
+window.location.href = "organichome.html";
+}
+</script>
+</body>
+</html>

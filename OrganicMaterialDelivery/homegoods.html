@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Goods</title>
+<style>
+body {
+font-family: garamond;
+font-weight: 600;
+background-color: #f9f9f9;
+margin: 0;
+padding: 20px;
+}
+.menu-item {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.menu-item img {
+width: 80px;
+height: 80px;
+border-radius: 8px;
+margin-right: 15px;
+}
+.menu-details {
+flex-grow: 1;
+}
+.menu-details h3 {
+margin: 0 0 5px;
+}
+.menu-details .price {
+color:#2e8b57;
+font-weight: bold;
+}
+.quantity-selector {
+display: flex;
+align-items: center;
+}
+.quantity-selector button {
+background-color: #ddd;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+font-size: 16px;
+}
+.quantity-selector button:hover {
+background-color: #bbb;
+}
+.quantity-input {
+width: 30px;
+text-align: center;
+margin: 0 5px;
+font-size: 16px;
+border: none;
+}
+.add-button {
+background-color: #2e8b57;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+margin-left: 10px;
+}
+.add-button:hover {
+background-color: #218838;
+}
+h1{
+color: #2e8b57;
+}
+</style>
+</head>
+<body>
+<h1>Home Goods - Category Page</h1>
+<div class="menu-item">
+<img src="floorcleaner.jpg" alt="Floor Cleaner">
+<div class="menu-details">
+<h3>Floor Cleaner</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(1, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-1" value="1" min="1" readonly>
+<button onclick="changeQuantity(1, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(1, 'Floor Cleaner', 170.00, 'floorcleaner.jpg', 'Home Goods')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="bathroomcleaner.jpg" alt="Bathroom Cleaner">
+<div class="menu-details">
+<h3>Bathroom Cleaner</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(2, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-2" value="1" min="1" readonly>
+<button onclick="changeQuantity(2, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(2, 'Bathroom Cleaner', 170.00, 'bathroomcleaner.jpg', 'Home Goods')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="soap.jpg" alt="Soap">
+<div class="menu-details">
+<h3>Soap</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(3, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-3" value="1" min="1" readonly>
+<button onclick="changeQuantity(3, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(3, 'Soap', 170.00, 'soapjpg.jpg', 'Home Goods')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="dishsoap.jpg" alt="Dish Soap">
+<div class="menu-details">
+<h3>Dish Soap</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(4, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-4" value="1" min="1" readonly>
+<button onclick="changeQuantity(4, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(4, 'Dish Soap', 170.00, 'dishsoap.jpg', 'Home Goods')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="mosquitorepeller.jpg" alt="Mosquito Repeller">
+<div class="menu-details">
+<h3>Mosquito Repeller</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(5, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-5" value="1" min="1" readonly>
+<button onclick="changeQuantity(5, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(5, 'Mosquito Repeller', 170.00, 'mosquitorepeller.jpg', 'Home Goods')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="toothbrush.jpg" alt="Bamboo Tooth Brush">
+<div class="menu-details">
+<h3>Bamboo Tooth Brush</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(6, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-6" value="1" min="1" readonly>
+<button onclick="changeQuantity(6, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(6, 'Bamboo Tooth Brush', 170.00, 'toothbrush.jpg', 'Home Goods')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="2brush.jpg" alt="2 Bamboo Tooth Brush">
+<div class="menu-details">
+<h3>2 Bamboo Tooth Brush</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(7, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-7" value="1" min="1" readonly>
+<button onclick="changeQuantity(7, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(7, '2 Bamboo Tooth Brush', 170.00, '2brush.jpg', 'Home Goods')">ADD</button>
+</div>
+<div class="menu-item">
+<img src="container.jpg" alt="Reusable Container">
+<div class="menu-details">
+<h3>Reusable Container</h3>
+<p class="price">₹170.00</p>
+<div class="quantity-selector">
+<button onclick="changeQuantity(39, -1)">-</button>
+<input type="number" class="quantity-input" id="quantity-39" value="1" min="1" readonly>
+<button onclick="changeQuantity(39, 1)">+</button>
+</div>
+</div>
+<button class="add-button" onclick="addToCart(39, 'Reusable Container', 170.00, 'container.jpg', 'Home Goods')">ADD</button>
+</div>    
+<script>
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+function changeQuantity(id, delta) {
+const quantityInput = document.getElementById(`quantity-${id}`);
+let quantity = parseInt(quantityInput.value) + delta;
+if (quantity < 1) quantity = 1;
+quantityInput.value = quantity;
+}
+function addToCart(id, name, price, image, category) {
+const quantity = parseInt(document.getElementById(`quantity-${id}`).value);
+const existingCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+const itemIndex = existingCart.findIndex(item => item.id === id && item.category === category);
+if (itemIndex > -1) {
+existingCart[itemIndex].quantity += quantity;
+} else {
+existingCart.push({ id, name, price, quantity, image, category });
+}
+localStorage.setItem('cartItems', JSON.stringify(existingCart));
+alert(`${name} added to cart with quantity: ${quantity}`);
+}
+</script>
+</body>
+</html>
